@@ -1,0 +1,21 @@
+
+<div class="input-date-main" (click)="readonly ? null : picker.open()">
+    <mat-form-field >
+        <input matInput 
+            value="{{value}}"
+            placeholder="{{placeholder}}" 
+            min="{{min}}"
+            max="{{max}}"
+            [readonly]="true"
+            [errorStateMatcher]="matcher"
+            [formControl]="control"
+            [matDatepicker]="picker"
+            (dateChange)="dateChanged($event.value)"/>
+
+        <mat-datepicker-toggle matSuffix></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <mat-hint>{{hint}}</mat-hint>
+        <mat-error>{{validation}}</mat-error>
+    </mat-form-field>
+</div>

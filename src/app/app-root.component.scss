@@ -1,0 +1,6 @@
+@import './src/assets/config/utils.scss';
+
+.app-root {
+    @extend %root;
+    
+}

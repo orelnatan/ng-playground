@@ -1,0 +1,20 @@
+
+<div class="primary-btn-main">
+    <div class="button"> 
+        <button type="{{type}}"
+            [disabled]="disabled" 
+            (click)="onclick.emit()" 
+            mat-raised-button >
+        
+            <mat-icon *ngIf="icon || disabled">{{disabled ? 'lock' : icon}}</mat-icon>
+
+            {{caption}} 
+        </button>
+    </div>
+    
+    <div class="progress-bar">
+        <mat-progress-bar *ngIf="inProgress"
+            mode="indeterminate">
+        </mat-progress-bar>
+    </div>
+</div>

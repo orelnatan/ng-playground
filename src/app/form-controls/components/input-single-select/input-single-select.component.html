@@ -1,0 +1,15 @@
+
+<div class="input-single-select-main">
+    <mat-form-field >
+        <mat-label>{{placeholder}}</mat-label>
+
+        <mat-select [(ngModel)]="selected" [compareWith]="compareWith" [errorStateMatcher]="matcher" [formControl]="control">
+            <mat-option *ngFor="let item of items" [value]="item.ID" [disabled]="item.DISABLED" (onSelectionChange)="handleChange($event)">
+                <span>{{item.NAME}}</span>
+            </mat-option>
+        </mat-select>
+
+        <mat-hint>{{hint}}</mat-hint>
+        <mat-error>{{validation}}</mat-error>
+    </mat-form-field>
+</div>

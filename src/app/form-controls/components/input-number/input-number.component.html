@@ -1,0 +1,20 @@
+
+<div class="input-number-main">
+    <mat-form-field>
+        <input matInput
+            type="number"
+            value="{{value}}" 
+            placeholder="{{placeholder}}"
+            [errorStateMatcher]="matcher"
+            [formControl]="control"
+            [readonly]="readonly"
+            (input)="onchange.emit($event.target.value)">
+            
+        <mat-hint>{{hint}}</mat-hint>
+        <mat-error>{{validation}}</mat-error>
+    </mat-form-field>
+</div>
+    
+    
+    
+    

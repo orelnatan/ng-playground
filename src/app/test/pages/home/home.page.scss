@@ -1,0 +1,23 @@
+@import './src/assets/config/utils.scss';
+
+.page {
+    @extend %page;
+    
+    .body {
+        @extend %body;
+    }
+
+    .login-form {
+        display: block;
+        width: 50%;
+        margin-top: 30px;
+    }
+    
+    .input-field {
+        margin-top: 15px;
+    }
+    
+    button {
+        width: 300px;
+    }
+}

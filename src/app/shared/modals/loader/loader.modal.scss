@@ -1,0 +1,16 @@
+@import './src/assets/config/utils.scss';
+
+// Set mat-dialog background as transparent.
+.mat-dialog-container { 
+    box-shadow: none;
+    background: transparent;
+}
+
+.loader-main {
+    display: block;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+
+
+}

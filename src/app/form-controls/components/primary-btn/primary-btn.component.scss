@@ -1,0 +1,34 @@
+@import './src/assets/config/utils.scss';
+
+.primary-btn-main {
+    display: block;
+    width: 100%;
+
+    button {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        background: $color-dark-sky;
+        font-size: 18px;
+        border-radius: 0px;
+        color: $color-white;
+        white-space: pre-wrap;
+        line-height: 0px;
+    }
+    
+    .progress-bar {
+        height: 4px;
+    }
+
+    mat-icon {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        margin: 0px 15px;
+    }
+
+    ::ng-deep span { 
+        font-family: assistant-bold;
+    }
+}
