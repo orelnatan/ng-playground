@@ -7,8 +7,8 @@ import { IItem } from 'src/app/shared/models/iitem.model';
 interface ILogin {
     USERNAME: string;
     DATE: string;
-    COMMENT: string;
-    CITYS: Array<number>;
+    EXPERTY: number;
+    TERMS: boolean;
 }
 
 @Component({
@@ -21,8 +21,8 @@ export class Home {
     login: ILogin = {
         USERNAME: null,
         DATE: null,
-        COMMENT: null,
-        CITYS: [2,5,7]
+        EXPERTY: null,
+        TERMS: null
     }
 
 
@@ -81,7 +81,7 @@ export class Home {
     }
 
     showModal(): void {
-        const dialogRef = this._dialog.open(Ipsum, {
+        const dialogRef = this._dialog.open(Loader, {
             
         });
     }
@@ -89,7 +89,6 @@ export class Home {
     onSubmit(login: ILogin): void {
         console.log(login);
 
-        this.showModal();
     }
 
 }

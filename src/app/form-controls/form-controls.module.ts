@@ -12,8 +12,10 @@ import { InputPassword } from './components/input-password/input-password.compon
 import { InputTextarea } from './components/input-textarea/input-textarea.component';
 import { InputSingleSelect } from './components/input-single-select/input-single-select.component';
 import { InputMultipleSelect } from './components/input-multiple-select/input-multiple-select.component';
+import { InputAutocompleteSingle } from './components/input-autocomplete-single/input-autocomplete-single.component';
 import { InputDate } from './components/input-date/input-date.component';
 import { PrimaryBtn } from './components/primary-btn/primary-btn.component';
+
 
 @NgModule({
     declarations: [
@@ -23,6 +25,7 @@ import { PrimaryBtn } from './components/primary-btn/primary-btn.component';
         InputTextarea,
         InputSingleSelect,
         InputMultipleSelect,
+        InputAutocompleteSingle,
         InputDate,
         PrimaryBtn,
         FormControl
@@ -43,6 +46,7 @@ import { PrimaryBtn } from './components/primary-btn/primary-btn.component';
         InputTextarea,
         InputSingleSelect,
         InputMultipleSelect,
+        InputAutocompleteSingle,
         InputDate,
         PrimaryBtn,
     ],

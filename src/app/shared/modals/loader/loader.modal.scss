@@ -8,9 +8,9 @@
 
 .loader-main {
     display: block;
-    width: 60px;
-    height: 60px;
-    overflow: hidden;
 
+    .mat-typography {
+        overflow: hidden;
+    }
 
 }

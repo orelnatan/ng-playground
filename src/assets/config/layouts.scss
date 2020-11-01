@@ -1,7 +1,6 @@
 @import './definitions';
 
 %root {
-    display: block;
     width: $full-screen;
     
     @media screen and (min-width: $breakpoint-sm) {
@@ -14,12 +13,10 @@
 }
 
 %page {
-    display: block;
     width: $full-screen;
+    padding-top: 85px;
 
     %body {
-        display: block;
-        padding: 30px 0px;
         margin: 0 auto;
         
         @media screen and (min-width: $breakpoint-sm) {
@@ -29,14 +26,5 @@
         @media screen and (max-width: $breakpoint-sm) {
             width: $body-mobile-width;
         }
-    }
-}
-
-%mobile-container {
-    display: block;
-    width: $full-screen;
-
-    @media screen and (max-width: $breakpoint-sm) {
-        padding: 0px 20px;
     }
 }

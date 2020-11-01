@@ -1,6 +1,6 @@
 
 <div class="input-multiple-select-main" >
-    <mat-form-field >
+    <mat-form-field>
         <mat-label>{{placeholder}}</mat-label>
 
         <mat-select multiple [(ngModel)]="selecteds" [compareWith]="compareWith" [errorStateMatcher]="matcher" [formControl]="control" (selectionChange)="handleChange($event)">

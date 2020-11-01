@@ -12,10 +12,9 @@ import * as moment from 'moment';
 })
 // For initial value max/min/value use format: 2011-05-28 || 2010-06-01
 export class InputDate {
-    @Input() control: FormControl = new FormControl();
-
     @ViewChild(MatDatepicker, { static: false }) datepicker: MatDatepicker<any>;
 
+    @Input() control: FormControl = new FormControl();
     @Input() value: string;
     @Input() placeholder: string;
     @Input() hint: string;

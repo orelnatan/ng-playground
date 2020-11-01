@@ -19,7 +19,7 @@ import {
     MatProgressBarModule,
     MatDialogModule,
     MatRadioModule,
-    MAT_DIALOG_DEFAULT_OPTIONS,
+    MatAutocompleteModule,
     ErrorStateMatcher,
     ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
@@ -28,6 +28,7 @@ import {
   imports: [
       MatButtonModule,
       MatProgressSpinnerModule, 
+      MatAutocompleteModule,
       MatCheckboxModule,
       MatInputModule,
       MatIconModule,
@@ -48,6 +49,7 @@ import {
   exports: [
       MatButtonModule,
       MatProgressSpinnerModule, 
+      MatAutocompleteModule,
       MatCheckboxModule,
       MatInputModule,
       MatIconModule,

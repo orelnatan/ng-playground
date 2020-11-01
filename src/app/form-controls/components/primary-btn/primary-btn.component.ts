@@ -12,9 +12,7 @@ export class PrimaryBtn {
 
     @Input() type: string = "submit";
     @Input() caption: string;
-    @Input() icon: string;
     @Input() disabled: boolean;
-    @Input() inProgress: boolean;
     
     @Output() onclick: EventEmitter<void> = new EventEmitter();
 
@@ -22,4 +20,6 @@ export class PrimaryBtn {
     public push(): void {
         this.button._elementRef.nativeElement.click();
     }
+
+    
 }
