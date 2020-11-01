@@ -12,6 +12,7 @@ import { IItem } from 'src/app/shared/models/iitem.model';
 
 export class InputAutocompleteSingle {
     @Input() control: FormControl = new FormControl();
+    @Input() selected: IItem;
     @Input() items: Array<IItem> = [];
     @Input() validation: string;
     @Input() placeholder: string;
@@ -21,14 +22,10 @@ export class InputAutocompleteSingle {
     @Output() onchange: EventEmitter<number> = new EventEmitter();
     
     matcher: ErrorStateMatcher = new InputErrorStateMatcher();
-    
-    
-    handleChnage(item: IItem): void {
-        this.onchange.emit(item.ID);
-    }
 
-    displayFn(item: IItem): string {
-        return item && item.NAME ? item.NAME : '';
+   
+    displayWith(item: IItem): string {
+        return item ? item.NAME : null;
     }
 
 }

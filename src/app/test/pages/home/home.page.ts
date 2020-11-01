@@ -7,7 +7,7 @@ import { IItem } from 'src/app/shared/models/iitem.model';
 interface ILogin {
     USERNAME: string;
     DATE: string;
-    EXPERTY: number;
+    EXPERTY: IItem;
     TERMS: boolean;
 }
 

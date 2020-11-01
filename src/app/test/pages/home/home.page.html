@@ -19,6 +19,22 @@
                         required>
                     </input-text>
                 </div>
+
+                <div class="input-field" >
+                    <input-autocomplete-single 
+                        [control]="experty.control"zz
+                        [items]="items"
+                        [placeholder]="'ENTER EXPERTY'"
+                        [validation]="'Experty is required'"
+                        [ngModel]="login.EXPERTY"
+                        (onchange)="login.EXPERTY=$event"
+                        name="experty"
+                        #experty="ngModel"
+                        ngDefaultControl
+                        requireMatch
+                        required>
+                    </input-autocomplete-single>
+                </div>
     
                 <div class="input-field">
                     <mat-checkbox

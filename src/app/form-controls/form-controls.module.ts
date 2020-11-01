@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppMaterialModule } from 'src/app/app-material.module';
 
 import { FormControl } from './pipes/form-control.pipe';
+import { RequireMatchValidator } from './directives/require-match-validator.directive';
 
 import { InputText } from './components/input-text/input-text.component';
 import { InputNumber } from './components/input-number/input-number.component';
@@ -14,8 +15,6 @@ import { InputSingleSelect } from './components/input-single-select/input-single
 import { InputMultipleSelect } from './components/input-multiple-select/input-multiple-select.component';
 import { InputAutocompleteSingle } from './components/input-autocomplete-single/input-autocomplete-single.component';
 import { InputDate } from './components/input-date/input-date.component';
-import { PrimaryBtn } from './components/primary-btn/primary-btn.component';
-
 
 @NgModule({
     declarations: [
@@ -27,8 +26,8 @@ import { PrimaryBtn } from './components/primary-btn/primary-btn.component';
         InputMultipleSelect,
         InputAutocompleteSingle,
         InputDate,
-        PrimaryBtn,
-        FormControl
+        FormControl,
+        RequireMatchValidator
     ],
     imports: [ 
         CommonModule,
@@ -48,7 +47,7 @@ import { PrimaryBtn } from './components/primary-btn/primary-btn.component';
         InputMultipleSelect,
         InputAutocompleteSingle,
         InputDate,
-        PrimaryBtn,
+        RequireMatchValidator
     ],
     
    
