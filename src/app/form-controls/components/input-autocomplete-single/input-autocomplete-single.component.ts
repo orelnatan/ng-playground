@@ -1,18 +1,22 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, ViewChild, OnChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ErrorStateMatcher, MatOption } from '@angular/material';
+import { ErrorStateMatcher, MatAutocomplete, MatOption } from '@angular/material';
 import { InputErrorStateMatcher } from '../../classes/input-error-state-matcher.class';
+import { Name } from '../../pipes/name.pipe';
 import { IItem } from 'src/app/shared/models/iitem.model';
 
 @Component({
     selector: 'input-autocomplete-single',
     templateUrl: './input-autocomplete-single.component.html',
-    styleUrls: ['./input-autocomplete-single.component.scss']
+    styleUrls: ['./input-autocomplete-single.component.scss'],
+    providers: [ Name, ]
 })
 
-export class InputAutocompleteSingle {
+export class InputAutocompleteSingle implements OnChanges {
+    @ViewChild(MatAutocomplete, { static: true }) autocomplete: MatAutocomplete;
+
     @Input() control: FormControl = new FormControl();
-    @Input() selected: IItem;
+    @Input() selected: number;
     @Input() items: Array<IItem> = [];
     @Input() validation: string;
     @Input() placeholder: string;
@@ -23,9 +27,19 @@ export class InputAutocompleteSingle {
     
     matcher: ErrorStateMatcher = new InputErrorStateMatcher();
 
+    constructor(
+        private _name: Name
+    ){}
+
+    ngOnChanges(): void {
+        this.control.setValue(this.selected);
+    }
    
-    displayWith(item: IItem): string {
-        return item ? item.NAME : null;
+    displayWith = (id: number): string => {
+        return this._name.transform(this.items, id);
     }
 
+    print(e){
+        console.log(e.value)
+    }
 }

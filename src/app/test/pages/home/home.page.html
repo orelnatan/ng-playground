@@ -22,8 +22,9 @@
 
                 <div class="input-field" >
                     <input-autocomplete-single 
-                        [control]="experty.control"zz
+                        [control]="experty.control"
                         [items]="items"
+                        [selected]="login.EXPERTY"
                         [placeholder]="'ENTER EXPERTY'"
                         [validation]="'Experty is required'"
                         [ngModel]="login.EXPERTY"
@@ -32,7 +33,7 @@
                         #experty="ngModel"
                         ngDefaultControl
                         requireMatch
-                        required>
+                        >
                     </input-autocomplete-single>
                 </div>
     

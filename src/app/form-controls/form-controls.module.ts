@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppMaterialModule } from 'src/app/app-material.module';
 
+import { Name } from './pipes/name.pipe';
 import { FormControl } from './pipes/form-control.pipe';
 import { RequireMatchValidator } from './directives/require-match-validator.directive';
 
@@ -27,6 +28,7 @@ import { InputDate } from './components/input-date/input-date.component';
         InputAutocompleteSingle,
         InputDate,
         FormControl,
+        Name,
         RequireMatchValidator
     ],
     imports: [ 
@@ -47,6 +49,7 @@ import { InputDate } from './components/input-date/input-date.component';
         InputMultipleSelect,
         InputAutocompleteSingle,
         InputDate,
+        Name,
         RequireMatchValidator
     ],
     

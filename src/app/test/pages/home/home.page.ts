@@ -7,7 +7,7 @@ import { IItem } from 'src/app/shared/models/iitem.model';
 interface ILogin {
     USERNAME: string;
     DATE: string;
-    EXPERTY: IItem;
+    EXPERTY: number;
     TERMS: boolean;
 }
 
@@ -21,7 +21,7 @@ export class Home {
     login: ILogin = {
         USERNAME: null,
         DATE: null,
-        EXPERTY: null,
+        EXPERTY: 5,
         TERMS: null
     }
 

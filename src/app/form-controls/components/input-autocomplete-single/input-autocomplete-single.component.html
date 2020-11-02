@@ -1,18 +1,19 @@
 
 <div class="input-autocomplete-single-main">
     <mat-form-field>
-        <input matInput
+        <input matInput #search
             type="text"
             value="{{value}}" 
             placeholder="{{placeholder}}"
             [errorStateMatcher]="matcher"
             [formControl]="control"
             [readonly]="readonly"
-            [matAutocomplete]="auto">
+            [matAutocomplete]="auto"
+            (input)="print(search)">
             
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith" (optionSelected)="onchange.emit($event.option.value)">
-            <mat-option *ngFor="let item of items" [value]="item">
-                {{item.NAME}}
+            <mat-option *ngFor="let item of items" [value]="item.ID" [ngClass]="{'highlighted': item.ID==selected}">
+                {{items | name: item.ID}}
             </mat-option>
         </mat-autocomplete>
 
