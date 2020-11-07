@@ -20,22 +20,24 @@
                     </input-text>
                 </div>
 
-                <div class="input-field" >
-                    <input-autocomplete-single 
-                        [control]="experty.control"
+                <div class="input-field">
+                    <input-autocomplete-multiple
+                        [control]="citys.control"
                         [items]="items"
-                        [selected]="login.EXPERTY"
-                        [placeholder]="'ENTER EXPERTY'"
-                        [validation]="'Experty is required'"
-                        [ngModel]="login.EXPERTY"
-                        (onchange)="login.EXPERTY=$event"
-                        name="experty"
-                        #experty="ngModel"
+                        [selecteds]="login.CITYS"
+                        [placeholder]="'CITYS'"
+                        [hint]="'select your home town'"
+                        [validation]="'Citys is required'"
+                        [readonly]="false"
+                        [ngModel]="login.CITYS"
+                        (onchange)="login.CITYS=$event"
+                        name="citys"
+                        #citys="ngModel"
                         ngDefaultControl
-                        requireSelect
                         required>
-                    </input-autocomplete-single>
+                    </input-autocomplete-multiple>
                 </div>
+
     
                 <div class="input-field">
                     <mat-checkbox

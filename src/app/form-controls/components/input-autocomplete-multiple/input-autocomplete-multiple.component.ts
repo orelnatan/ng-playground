@@ -1,53 +1,46 @@
-import { Component, Input, Output, EventEmitter, OnInit, ViewChild, OnChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, OnChanges, } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ErrorStateMatcher, MatAutocomplete, MatOption } from '@angular/material';
+import { ErrorStateMatcher, MatSelect, MatSelectChange } from '@angular/material';
 import { InputErrorStateMatcher } from '../../classes/input-error-state-matcher.class';
-import { Name } from '../../pipes/name.pipe';
-import { IItem } from 'src/app/shared/models/iitem.model'; 
-
-interface IAutocompleteItem {
-    display: string;
-    value: string;
-    disabled: boolean;
-}
+import { IItem } from 'src/app/shared/models/iitem.model';
 
 @Component({
-    selector: 'input-autocomplete-multiple',
-    templateUrl: './input-autocomplete-multiple.component.html',
-    styleUrls: ['./input-autocomplete-multiple.component.scss'],
-    providers: [ Name, ]
+  selector: 'input-autocomplete-multiple',
+  templateUrl: './input-autocomplete-multiple.component.html',
+  styleUrls: ['./input-autocomplete-multiple.component.scss', ],
 })
 
 export class InputAutocompleteMultiple implements OnChanges {
-    
-
-   // @ViewChild(SelectAutocompleteComponent, { static: true }) autocomplete: SelectAutocompleteComponent;
+    @ViewChild(MatSelect, { static: true }) select: MatSelect;
 
     @Input() control: FormControl = new FormControl();
-    @Input() selecteds: Array<string>;
     @Input() items: Array<IItem> = [];
-    @Input() validation: string;
+    @Input() selecteds: Array<number> = [];
     @Input() placeholder: string;
     @Input() hint: string;
-    @Input() required: boolean;
+    @Input() validation: string;
     @Input() readonly: boolean;
+    @Input() required: boolean;
 
-    @Output() onchange: EventEmitter<string[]> = new EventEmitter();
+    @Output() onchange: EventEmitter<number[]> = new EventEmitter();
 
-    options: Array<IAutocompleteItem> = [];
-
+    matcher: ErrorStateMatcher = new InputErrorStateMatcher();
+    
     ngOnChanges(): void {
-        // this.items.forEach(element => {
-        //     this.options.push({
-        //         display: element.NAME,
-        //         value: String(element.ID),
-        //         disabled: false
-        //     })
-        // });
+        this.select.disabled = this.readonly;
     }
-   
 
-    toggle(){
-        //this.autocomplete.toggleDropdown();
+    handleChange(event: MatSelectChange): void {
+        if(!event.source.selected) return;
+        
+        this.onchange.emit(event.source.value);
     }
+
+    compareWith(arg1: number, arg2: number): boolean {
+        if(!arg1 || !arg2) return;
+
+        return arg1 === arg2;
+    }
+
 }
+
