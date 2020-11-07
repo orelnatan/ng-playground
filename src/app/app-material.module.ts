@@ -12,7 +12,9 @@ import {
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatMenuModule,
     MatChipsModule,
+    MatListModule,
     MatProgressSpinnerModule,
     MatExpansionModule,
     MatSnackBarModule,
@@ -20,8 +22,6 @@ import {
     MatDialogModule,
     MatRadioModule,
     MatAutocompleteModule,
-    ErrorStateMatcher,
-    ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
 
 @NgModule({
@@ -31,7 +31,9 @@ import {
       MatAutocompleteModule,
       MatCheckboxModule,
       MatInputModule,
+      MatMenuModule,
       MatIconModule,
+      MatListModule,
       MatDatepickerModule,
       MatNativeDateModule,
       MatSelectModule,
@@ -53,6 +55,8 @@ import {
       MatCheckboxModule,
       MatInputModule,
       MatIconModule,
+      MatListModule,
+      MatMenuModule,
       MatDatepickerModule,
       MatNativeDateModule,
       MatSelectModule,
@@ -67,9 +71,7 @@ import {
       MatDialogModule,
       MatRadioModule,
   ],
-  providers: [
-    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
-  ]
+  
   
 })
 export class AppMaterialModule {}

@@ -39,7 +39,5 @@ export class InputAutocompleteSingle implements OnChanges {
         return this._name.transform(this.items, id);
     }
 
-    print(e){
-        console.log(e.value)
-    }
+   
 }
