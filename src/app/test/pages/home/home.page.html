@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="input-field">
-                    <input-autocomplete-multiple
+                    <input-multiple-select
                         [control]="citys.control"
                         [items]="items"
                         [selecteds]="login.CITYS"
@@ -34,9 +34,13 @@
                         name="citys"
                         #citys="ngModel"
                         ngDefaultControl
+                        [min]="3"
+                        collection
                         required>
-                    </input-autocomplete-multiple>
+                    </input-multiple-select>
                 </div>
+
+                
 
     
                 <div class="input-field">

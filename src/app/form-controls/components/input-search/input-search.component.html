@@ -1,0 +1,22 @@
+
+<div class="input-search-main">
+    <mat-form-field>
+        <mat-icon matSuffix>search</mat-icon>
+
+        <input matInput 
+            type="text"
+            value="{{value}}"
+            autocomplete="off" 
+            placeholder="{{placeholder}}"
+            [errorStateMatcher]="matcher"
+            [formControl]="control"
+            [readonly]="readonly">
+
+        <mat-hint>{{hint}}</mat-hint>
+        <mat-error>{{validation}}</mat-error>
+    </mat-form-field>
+</div>
+    
+    
+    
+    

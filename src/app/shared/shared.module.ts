@@ -5,6 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppMaterialModule } from '../app-material.module';
 import { FormControlsModule } from '../form-controls/form-controls.module';
 
+import { RequireSelectValidator } from './directives/require-select-validator.directive';
+import { Collection } from './directives/collection-validator.directive';
+
 import { Loader } from './modals/loader/loader.modal';
 import { Ipsum } from './modals/ipsum/ipsum.modal';
 
@@ -16,7 +19,9 @@ import { Modal } from './components/modal/modal.component';
        Spinner,
        Modal,
        Loader,
-       Ipsum
+       Ipsum,
+       Collection,
+       RequireSelectValidator
     ],
     imports: [ 
         CommonModule,
@@ -30,7 +35,9 @@ import { Modal } from './components/modal/modal.component';
         Spinner,
         Modal,
         Loader,
-        Ipsum
+        Ipsum,
+        Collection,
+        RequireSelectValidator
     ],
     entryComponents: [
         Loader,

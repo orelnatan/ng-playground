@@ -4,15 +4,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppMaterialModule } from 'src/app/app-material.module';
 
-import { RequireSelectValidator } from './directives/require-select-validator.directive';
+import { Display } from './components/input-autocomplete-multiple/directives/display.directive';
 
-import { Name } from './pipes/name.pipe';
-import { Filter } from './pipes/filter.pipe';
+import { Filter } from './components/input-autocomplete-single/pipes/filter.pipe';
+import { Name } from './components/input-autocomplete-single/pipes/name.pipe';
 import { Highlight } from './pipes/highlight.pipe';
 import { FormControl } from './pipes/form-control.pipe';
 
 import { InputText } from './components/input-text/input-text.component';
 import { InputDate } from './components/input-date/input-date.component';
+import { InputSearch } from './components/input-search/input-search.component';
 import { InputNumber } from './components/input-number/input-number.component';
 import { InputPassword } from './components/input-password/input-password.component';
 import { InputTextarea } from './components/input-textarea/input-textarea.component';
@@ -25,6 +26,7 @@ import { InputAutocompleteMultiple } from './components/input-autocomplete-multi
     declarations: [
         InputText,
         InputNumber,
+        InputSearch,
         InputPassword,
         InputTextarea,
         InputSingleSelect,
@@ -36,7 +38,7 @@ import { InputAutocompleteMultiple } from './components/input-autocomplete-multi
         Highlight,
         Filter,
         Name,
-        RequireSelectValidator
+        Display,
     ],
     imports: [ 
         CommonModule,
@@ -50,6 +52,7 @@ import { InputAutocompleteMultiple } from './components/input-autocomplete-multi
     exports: [
         InputText,
         InputNumber,
+        InputSearch,
         InputPassword,
         InputTextarea,
         InputSingleSelect,
@@ -57,7 +60,6 @@ import { InputAutocompleteMultiple } from './components/input-autocomplete-multi
         InputAutocompleteSingle,
         InputAutocompleteMultiple,
         InputDate,
-        RequireSelectValidator
     ],
     
    

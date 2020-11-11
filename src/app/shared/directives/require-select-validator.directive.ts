@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, Output, } from '@angular/core';
+import { Directive, } from '@angular/core';
 import { NG_VALIDATORS, Validator, FormControl, ValidationErrors, } from '@angular/forms';
 
 @Directive({
@@ -13,7 +13,7 @@ export class RequireSelectValidator implements Validator {
 
     validate(control: FormControl): ValidationErrors | null {
         if(!control.value) return null;
-        
+       
         return typeof control.value === "string" ? {
             requireSelect: {
                 valid: false,

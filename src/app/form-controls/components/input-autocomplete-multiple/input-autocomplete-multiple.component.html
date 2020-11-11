@@ -3,14 +3,18 @@
     <mat-form-field>
         <mat-label>{{placeholder}}</mat-label>
 
-        <mat-select multiple [(ngModel)]="selecteds" [compareWith]="compareWith" [errorStateMatcher]="matcher" [formControl]="control" (selectionChange)="handleChange($event)">
-            <div (keydown)="$event.stopPropagation()">
-                <input class="searchbox" placeholder="Search..."/>
+        <mat-select multiple [(ngModel)]="selecteds" [compareWith]="compareWith" [errorStateMatcher]="matcher" [formControl]="control" (openedChange)="searchbox.value=''" (selectionChange)="handleChange($event)">
+            <div class="search-box" (keydown)="$event.stopPropagation()">
+                <input-search #searchbox
+                    [placeholder]="'Search...'">
+                </input-search>
             </div>
 
-            <mat-option *ngFor="let item of items" [value]="item.ID" [disabled]="item.DISABLED">
-                <span>{{item.NAME}}</span>
-            </mat-option>
+            <div class="option-item" *ngFor="let item of items" display [name]="item.NAME" [key]="searchbox.value">
+                <mat-option [value]="item.ID" [disabled]="item.DISABLED">
+                    <span [innerHTML]="item.NAME | highlight: searchbox.value"></span>
+                </mat-option>
+            </div>
         </mat-select>
 
         <mat-hint>{{hint}}</mat-hint>

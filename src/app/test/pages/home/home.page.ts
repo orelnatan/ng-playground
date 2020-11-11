@@ -9,7 +9,7 @@ interface ILogin {
     DATE: string;
     EXPERTY: number;
     TERMS: boolean;
-    OPTIONS: Array<string>;
+    CITYS: Array<number>;
 }
 
 @Component({
@@ -24,7 +24,7 @@ export class Home {
         DATE: null,
         EXPERTY: null,
         TERMS: null,
-        OPTIONS: ["3", "6"]
+        CITYS: []
     }
 
     items: Array<IItem> = [
@@ -39,6 +39,7 @@ export class Home {
         {
             ID: 3,
             NAME: "Avi Hazan",
+            DISABLED: true
         },
         {
             ID: 4,

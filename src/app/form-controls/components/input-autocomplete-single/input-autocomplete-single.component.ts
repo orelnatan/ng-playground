@@ -1,8 +1,8 @@
-import { Component, Input, Output, EventEmitter, OnInit, ViewChild, OnChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, OnChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ErrorStateMatcher, MatAutocomplete, MatOption } from '@angular/material';
+import { ErrorStateMatcher, MatAutocomplete, } from '@angular/material';
 import { InputErrorStateMatcher } from '../../classes/input-error-state-matcher.class';
-import { Name } from '../../pipes/name.pipe';
+import { Name } from './pipes/name.pipe';
 import { IItem } from 'src/app/shared/models/iitem.model';
 
 @Component({

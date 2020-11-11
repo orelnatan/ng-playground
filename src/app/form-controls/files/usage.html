@@ -105,6 +105,24 @@
     </div>
 
     <div class="input-field">
+        <input-autocomplete-multiple
+            [control]="citys.control"
+            [items]="items"
+            [selecteds]="login.CITYS"
+            [placeholder]="'CITYS'"
+            [hint]="'select your home town'"
+            [validation]="'Citys is required'"
+            [readonly]="false"
+            [ngModel]="login.CITYS"
+            (onchange)="login.CITYS=$event"
+            name="citys"
+            #citys="ngModel"
+            ngDefaultControl
+            required>
+        </input-autocomplete-multiple>
+    </div>
+
+    <div class="input-field">
         <mat-checkbox
             [ngModel]="login.TERMS"
             (change)="login.TERMS=$event.checked"  

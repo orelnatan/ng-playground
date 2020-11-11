@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class Highlight implements PipeTransform {
     transform(value: string, keyword: string): string {
-        if(keyword == " ") return value;
-      
-        return value.replace(keyword.toLowerCase(), `<mark>${keyword.toLowerCase()}</mark>`); 
+        if(!value || !keyword) return value;
+        
+        return value.toLowerCase().replace(keyword.toLowerCase(), `<mark>${keyword}</mark>`); 
     }
 }
