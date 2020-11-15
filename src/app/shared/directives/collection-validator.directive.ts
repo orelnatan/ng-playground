@@ -16,7 +16,7 @@ export class Collection implements Validator {
 
     validate(control: FormControl): ValidationErrors | null {
         if(!control.value || !control.value.length) return null;
-
+        console.log(control.value)
         return (control.value.length < this.min || control.value.length > this.max) ? {
             collection: {
                 valid: false,

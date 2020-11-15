@@ -2,6 +2,7 @@ import { Component, OnInit, } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Ipsum } from 'src/app/shared/modals/ipsum/ipsum.modal';
 import { Loader } from 'src/app/shared/modals/loader/loader.modal';
+import { IFile } from 'src/app/shared/models/ifile.model';
 import { IItem } from 'src/app/shared/models/iitem.model';
 
 interface ILogin {
@@ -10,6 +11,7 @@ interface ILogin {
     EXPERTY: number;
     TERMS: boolean;
     CITYS: Array<number>;
+    FILES: Array<IFile>;
 }
 
 @Component({
@@ -24,7 +26,8 @@ export class Home {
         DATE: null,
         EXPERTY: null,
         TERMS: null,
-        CITYS: []
+        CITYS: [2,4,6,7],
+        FILES: []
     }
 
     items: Array<IItem> = [

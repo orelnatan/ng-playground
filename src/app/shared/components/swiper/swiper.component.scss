@@ -1,0 +1,57 @@
+@import './src/assets/config/utils.scss';
+
+.swiper-main {
+    display: inline-block;
+
+    .body {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+    }
+
+    .sliders-container {
+        position: relative;
+        display: block;
+        width: 275px;   // the container's width == slider-item.width + 100.
+        height: 255px;  // the container's height == slider-item.height.
+        overflow: hidden;
+        margin: 0px 65px;
+    }
+
+    .slider-item {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 175px;       // the slider-item's width.
+        height: 255px;      // the slider-item's height.
+        transition: 0.5s;
+        border: 1px solid black;
+        background: $color-dark-gray;
+        overflow: hidden;
+    }
+
+    .arrow-slide {
+        color: $color-dark-sky;
+        cursor: pointer;
+
+        &:hover { color: $color-blue; }
+    }
+
+    .inactive {
+        color: $color-office;
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        &:hover { color: $color-office; }
+    }
+    
+    mat-icon {
+        height: 50px;
+        width: 50px;
+        font-size: 50px;
+    }
+
+
+}

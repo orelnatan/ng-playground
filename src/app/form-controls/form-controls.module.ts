@@ -5,14 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppMaterialModule } from 'src/app/app-material.module';
 
 import { Display } from './components/input-autocomplete-multiple/directives/display.directive';
+import { HasError } from './directives/has-error.directive';
 
 import { Filter } from './components/input-autocomplete-single/pipes/filter.pipe';
 import { Name } from './components/input-autocomplete-single/pipes/name.pipe';
-import { Highlight } from './pipes/highlight.pipe';
 import { FormControl } from './pipes/form-control.pipe';
+import { Highlight } from './pipes/highlight.pipe';
 
 import { InputText } from './components/input-text/input-text.component';
 import { InputDate } from './components/input-date/input-date.component';
+import { InputFile } from './components/input-file/input-file.component';
 import { InputSearch } from './components/input-search/input-search.component';
 import { InputNumber } from './components/input-number/input-number.component';
 import { InputPassword } from './components/input-password/input-password.component';
@@ -22,9 +24,11 @@ import { InputMultipleSelect } from './components/input-multiple-select/input-mu
 import { InputAutocompleteSingle } from './components/input-autocomplete-single/input-autocomplete-single.component';
 import { InputAutocompleteMultiple } from './components/input-autocomplete-multiple/input-autocomplete-multiple.component';
 
+
 @NgModule({
     declarations: [
         InputText,
+        InputFile,
         InputNumber,
         InputSearch,
         InputPassword,
@@ -39,6 +43,7 @@ import { InputAutocompleteMultiple } from './components/input-autocomplete-multi
         Filter,
         Name,
         Display,
+        HasError
     ],
     imports: [ 
         CommonModule,
@@ -51,6 +56,7 @@ import { InputAutocompleteMultiple } from './components/input-autocomplete-multi
     ], 
     exports: [
         InputText,
+        InputFile,
         InputNumber,
         InputSearch,
         InputPassword,

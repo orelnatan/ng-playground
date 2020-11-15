@@ -1,0 +1,24 @@
+
+<div class="input-file-main" >
+    <mat-form-field>
+        <mat-label>{{placeholder}}</mat-label>
+        <mat-icon matSuffix (click)="createHTMLFileInputElement(); $event.stopPropagation()">save_alt</mat-icon>
+
+        <mat-select multiple [errorStateMatcher]="matcher" [formControl]="control" (selectionChange)="handleChange($event)">
+            <mat-select-trigger>
+                {{files.length}} Files Selected
+            </mat-select-trigger>
+
+            <mat-option *ngFor="let file of files" [value]="file">
+                <div class="option-inner-layer" (click)="$event.stopPropagation()">
+                    <mat-icon (click)="removeFile(file.ID)">close</mat-icon>
+
+                    <span (click)="onselect.emit(file)">{{file.NAME}}</span>
+                </div>
+            </mat-option>
+        </mat-select>
+
+        <mat-hint>{{hint}}</mat-hint>
+        <mat-error>{{validation}}</mat-error>
+    </mat-form-field>
+</div>

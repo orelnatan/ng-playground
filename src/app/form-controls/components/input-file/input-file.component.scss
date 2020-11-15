@@ -1,0 +1,15 @@
+@import './src/assets/config/utils.scss';
+
+.input-file-main {
+    display: block;
+    width: 100%;
+    
+    
+    
+}
+
+
+::ng-deep .mat-option .mat-pseudo-checkbox { 
+    display: none; 
+}
+

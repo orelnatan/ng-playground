@@ -13,6 +13,7 @@ import { Ipsum } from './modals/ipsum/ipsum.modal';
 
 import { Spinner } from './components/spinner/spinner.component';
 import { Modal } from './components/modal/modal.component';
+import { Swiper } from './components/swiper/swiper.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { Modal } from './components/modal/modal.component';
        Modal,
        Loader,
        Ipsum,
+       Swiper,
        Collection,
        RequireSelectValidator
     ],
@@ -34,6 +36,7 @@ import { Modal } from './components/modal/modal.component';
     exports: [
         Spinner,
         Modal,
+        Swiper,
         Loader,
         Ipsum,
         Collection,

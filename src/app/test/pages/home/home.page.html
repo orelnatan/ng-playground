@@ -21,25 +21,38 @@
                 </div>
 
                 <div class="input-field">
-                    <input-multiple-select
-                        [control]="citys.control"
-                        [items]="items"
-                        [selecteds]="login.CITYS"
-                        [placeholder]="'CITYS'"
-                        [hint]="'select your home town'"
-                        [validation]="'Citys is required'"
+                    <input-date
+                        [control]="date.control"
+                        [value]="login.DATE"
+                        [placeholder]="'ENTER DATE'"
+                        [hint]="'a date hint'"
+                        [validation]="'Date is required'"
                         [readonly]="false"
-                        [ngModel]="login.CITYS"
-                        (onchange)="login.CITYS=$event"
-                        name="citys"
-                        #citys="ngModel"
+                        [ngModel]="login.DATE"
+                        (onchange)="login.DATE=$event"
+                        name="date"
+                        #date="ngModel"
                         ngDefaultControl
-                        [min]="3"
-                        collection
                         required>
-                    </input-multiple-select>
+                    </input-date>
                 </div>
 
+                <div class="input-field">
+                    <input-file
+                        [control]="file.control"
+                        [files]="login.FILES"
+                        [placeholder]="'UPLOADE YOUR FILES'"
+                        [validation]="'file is required'"
+                        [ngModel]="login.FILES"
+                        (onchange)="login.FILES=$event"
+                        name="file"
+                        #file="ngModel"
+                        ngDefaultControl
+                        collection
+                        [min]="3"
+                        required>
+                    </input-file>
+                </div>
                 
 
     

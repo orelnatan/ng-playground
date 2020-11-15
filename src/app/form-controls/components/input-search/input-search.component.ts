@@ -28,12 +28,11 @@ export class InputSearch {
     
 
     constructor() {
-        this.control.valueChanges
-            .pipe(debounceTime(DEBOUNCE_TIME))
-                        .subscribe((value: string) => {
-
-            this.value = value;
-            this.onchange.emit(value);
+        this.control.valueChanges.pipe(debounceTime(DEBOUNCE_TIME)).subscribe(
+            (value: string) => {
+                this.value = value;
+                
+                this.onchange.emit(value);
         });
     }
 
