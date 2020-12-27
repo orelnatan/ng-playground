@@ -32,7 +32,7 @@ export class InputSingleSelect implements OnChanges {
 
     handleChange(event: MatSelectChange): void {
         if(!event.source.selected) return;
-       
+
         this.onchange.emit(event.source.value);
     }
 

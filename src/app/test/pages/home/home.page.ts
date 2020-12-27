@@ -1,5 +1,8 @@
-import { Component, OnInit, } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnInit, QueryList, TemplateRef, ViewChild, ViewChildren, } from '@angular/core';
 import { MatDialog } from '@angular/material';
+import { InputText } from 'src/app/form-controls/components/input-text/input-text.component';
+import { InputTextarea } from 'src/app/form-controls/components/input-textarea/input-textarea.component';
+import { Swiper } from 'src/app/shared/components/swiper/swiper.component';
 import { Ipsum } from 'src/app/shared/modals/ipsum/ipsum.modal';
 import { Loader } from 'src/app/shared/modals/loader/loader.modal';
 import { IFile } from 'src/app/shared/models/ifile.model';
@@ -11,6 +14,7 @@ interface ILogin {
     EXPERTY: number;
     TERMS: boolean;
     CITYS: Array<number>;
+    CITY: number;
     FILES: Array<IFile>;
 }
 
@@ -20,13 +24,17 @@ interface ILogin {
   styleUrls: ['./home.page.scss'],
 })
 
-export class Home { 
+export class Home implements AfterContentInit, AfterViewInit { 
+    @ViewChildren(Swiper, ) swipers: QueryList<Swiper>;
+
+    
     login: ILogin = {
         USERNAME: null,
         DATE: null,
-        EXPERTY: null,
+        EXPERTY: 4,
         TERMS: null,
         CITYS: [2,4,6,7],
+        CITY: 4,
         FILES: []
     }
 
@@ -81,13 +89,23 @@ export class Home {
     ) {}
 
 
+    ngAfterContentInit(): void {
+        console.log(this.swipers);
+    }
+
+    ngAfterViewInit(): void {
+        this.swipers.forEach((element, index) => {
+            console.log(element)
+        });
+    }
+
     print(e){
         console.log(e)
     }
 
     showModal(): void {
         const dialogRef = this._dialog.open(Loader, {
-            
+            panelClass: "loader-dialog"
         });
     }
 

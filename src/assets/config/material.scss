@@ -9,3 +9,11 @@ mat-error {
     font-size: 12px;
     font-weight: 700;
 }
+
+.loader-dialog {
+    .mat-dialog-container { 
+        box-shadow: none;
+        background: transparent;
+    }
+}
+

@@ -15,6 +15,7 @@ export class InputFile {
 
     @Input() control: FormControl = new FormControl();
     @Input() files: Array<IFile> = [];
+    @Input() selected: number = 0;
     @Input() placeholder: string;
     @Input() hint: string;
     @Input() validation: string;
@@ -32,8 +33,14 @@ export class InputFile {
 
     handleChange(event: MatSelectChange): void {
         if(!event.source.selected) return;
-        
-        this.onchange.emit([ ...this.files ]);
+       console.log(event.source.value);
+      //  this.onchange.emit(event.source.value);
+    }
+
+    compareWith(arg1: number, arg2: number): boolean {
+        if(!arg1 || !arg2) return;
+
+        return arg1 === arg2;
     }
 
     generateId(): number {

@@ -5,38 +5,6 @@
        
         <div class="login-form">
             <form #form="ngForm" (ngSubmit)="form.valid && onSubmit(login)" novalidate>
-                <div class="input-field" >
-                    <input-text 
-                        [control]="user.control"
-                        [value]="login.USERNAME"
-                        [placeholder]="'ENTER USERNAME'"
-                        [validation]="'Name is required'"
-                        [ngModel]="login.USERNAME"
-                        (onchange)="login.USERNAME=$event"
-                        name="user"
-                        #user="ngModel"
-                        ngDefaultControl
-                        required>
-                    </input-text>
-                </div>
-
-                <div class="input-field">
-                    <input-date
-                        [control]="date.control"
-                        [value]="login.DATE"
-                        [placeholder]="'ENTER DATE'"
-                        [hint]="'a date hint'"
-                        [validation]="'Date is required'"
-                        [readonly]="false"
-                        [ngModel]="login.DATE"
-                        (onchange)="login.DATE=$event"
-                        name="date"
-                        #date="ngModel"
-                        ngDefaultControl
-                        required>
-                    </input-date>
-                </div>
-
                 <div class="input-field">
                     <input-file
                         [control]="file.control"
@@ -53,22 +21,25 @@
                         required>
                     </input-file>
                 </div>
-                
 
-    
                 <div class="input-field">
-                    <mat-checkbox
-                        [ngModel]="login.TERMS"
-                        (change)="login.TERMS=$event.checked"  
-                        name="terms" 
-                        #terms="ngModel" 
-                         >
-
-                        <mat-hint>Accept terms</mat-hint>
-                    </mat-checkbox>
-                    <mat-error *ngIf="terms.invalid && form.submitted">You most accept the terms</mat-error>
+                    <input-multiple-select
+                        [control]="citys.control"
+                        [items]="items"
+                        [selecteds]="login.CITYS"
+                        [placeholder]="'CITYS'"
+                        [hint]="'select your home town'"
+                        [validation]="'Citys is required'"
+                        [readonly]="false"
+                        [ngModel]="login.CITYS"
+                        (onchange)="login.CITYS=$event"
+                        name="citys"
+                        #citys="ngModel"
+                        ngDefaultControl
+                        required>
+                    </input-multiple-select>
                 </div>
-    
+                
                 <div class="input-field submit" align="end">
                     <button mat-raised-button color="primary">Submit the form</button>
                 </div>

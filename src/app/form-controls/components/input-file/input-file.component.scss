@@ -1,15 +1,15 @@
 @import './src/assets/config/utils.scss';
 
 .input-file-main {
+    position: relative;
     display: block;
     width: 100%;
     
-    
-    
-}
+    label {
+        position: absolute;
+    }
 
 
-::ng-deep .mat-option .mat-pseudo-checkbox { 
-    display: none; 
+    
 }
 
